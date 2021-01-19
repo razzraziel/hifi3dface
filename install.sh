@@ -4,6 +4,8 @@ TF_INC=$(python -c 'import tensorflow as tf; print(tf.sysconfig.get_include())')
 TF_LIB=$(python -c 'import tensorflow as tf; print(tf.sysconfig.get_lib())')
 # you might need the following to successfully compile the third-party library
 tf_mesh_renderer_path=$(pwd)/third_party/kernels/
+#sudo ln -s /usr/local/lib/python3.6/dist-packages/tensorflow/libtensorflow_framework.so.2 /usr/lib/libtensorflow_framework.so
+#sudo ldconfig
 g++ -std=c++11 \
     -shared $tf_mesh_renderer_path/rasterize_triangles_grad.cc $tf_mesh_renderer_path/rasterize_triangles_op.cc $tf_mesh_renderer_path/rasterize_triangles_impl.cc $tf_mesh_renderer_path/rasterize_triangles_impl.h \
     -o $tf_mesh_renderer_path/rasterize_triangles_kernel.so -fPIC \
