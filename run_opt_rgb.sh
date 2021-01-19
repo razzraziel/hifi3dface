@@ -19,7 +19,7 @@ vggpath="$resources_path/vgg-face.mat"
 pb_path=$resources_path/PB/
 
 # # data directories
-ROOT_DIR=$(pwd)/test_data/RGB/test1/single_img/;
+ROOT_DIR=$(pwd)/test_data/RGB/input/;
 img_dir=$ROOT_DIR
 
 ########################################################
